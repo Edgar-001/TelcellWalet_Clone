@@ -25,7 +25,6 @@ class MyApp extends StatelessWidget {
   }
 }
 
-//////////////////////////////////////////////////////////////////
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -36,20 +35,14 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  late List _pages;
   int currentIndexBotBar = 0;
   Color appOrange = const Color(0xffFF6F52);
   @override
   Widget build(BuildContext context) {
-    _pages = [
-      const FirstPage(),
-      const SecondPage(),
-      const ThirdPage(),
-      const FourthPage(),
-    ];
+   
     return SafeArea(
       child: Scaffold(
-        body: _pages[currentIndexBotBar],
+        body: body(),
         bottomNavigationBar: BottomNavigationBar(
           unselectedItemColor: Colors.grey,
           selectedItemColor: Colors.blue,
@@ -69,5 +62,22 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
     );
+  }
+
+  Widget body() {
+    return getBody();
+  }
+
+  Widget getBody() {
+    switch (currentIndexBotBar) {
+      case 0:
+        return const FirstPage();
+      case 1:
+        return const SecondPage();
+      case 2:
+        return const ThirdPage();
+      default:
+        return Container();
+    }
   }
 }
