@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:telcellwallet_clone/pages/first_page.dart';
-import 'package:telcellwallet_clone/pages/fourth_page.dart';
-import 'package:telcellwallet_clone/pages/third_page.dart';
-import 'package:telcellwallet_clone/pages/two_page.dart';
+import 'package:telcellwallet_clone/pages_tab/home_tab.dart';
+import 'package:telcellwallet_clone/pages_tab/bank_tab.dart';
+import 'package:telcellwallet_clone/pages_tab/qr_tab.dart';
+import 'package:telcellwallet_clone/pages_tab/bon_tab.dart';
 
 void main() {
   runApp(const MyApp());
@@ -39,7 +39,6 @@ class _HomePageState extends State<HomePage> {
   Color appOrange = const Color(0xffFF6F52);
   @override
   Widget build(BuildContext context) {
-   
     return SafeArea(
       child: Scaffold(
         body: body(),
@@ -71,11 +70,13 @@ class _HomePageState extends State<HomePage> {
   Widget getBody() {
     switch (currentIndexBotBar) {
       case 0:
-        return const FirstPage();
+        return const HomeTabPage();
       case 1:
-        return const SecondPage();
+        return const BonTabPage();
       case 2:
-        return const ThirdPage();
+        return QRCodeTab();
+      case 3:
+        return const BankTabPage();
       default:
         return Container();
     }

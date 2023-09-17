@@ -1,29 +1,25 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
+import 'package:telcellwallet_clone/helpers/colors.dart';
 import 'package:telcellwallet_clone/pages/selected_payments_page.dart';
 import 'package:telcellwallet_clone/pages/services_page.dart';
 import 'package:telcellwallet_clone/pages/special_offers_page.dart';
 
-class FirstPage extends StatefulWidget {
-  const FirstPage({super.key});
+class HomeTabPage extends StatefulWidget {
+  const HomeTabPage({super.key});
 
   @override
-  State<FirstPage> createState() => _FirstPageState();
+  State<HomeTabPage> createState() => _HomeTabPageState();
 }
 
-class _FirstPageState extends State<FirstPage> {
-  Color bgColor = const Color(0xffFCFCFC);
-  Color appBlack = const Color(0xff212C2E);
-  Color appOrange = const Color(0xffFF6F52);
+class _HomeTabPageState extends State<HomeTabPage> {
   bool isvisibility = true;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: bgColor,
+        backgroundColor: AppColors.bgColor,
         appBar: AppBar(
-          backgroundColor: bgColor,
+          backgroundColor: AppColors.bgColor,
           elevation: 0,
           title: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -33,16 +29,16 @@ class _FirstPageState extends State<FirstPage> {
                   Text(
                     'ԳՈՌ',
                     style: TextStyle(
-                        color: appBlack,
+                        color: AppColors.appBlack,
                         fontSize: 20,
                         fontWeight: FontWeight.bold),
                   ),
-                  Icon(Icons.chevron_right_outlined, color: appBlack)
+                  Icon(Icons.chevron_right_outlined, color: AppColors.appBlack)
                 ],
               ),
               Text(
                 'էքսպերտ',
-                style: TextStyle(color: appBlack, fontSize: 10),
+                style: TextStyle(color: AppColors.appBlack, fontSize: 10),
               ),
             ],
           ),
@@ -51,14 +47,14 @@ class _FirstPageState extends State<FirstPage> {
               onPressed: () {},
               icon: Icon(
                 Icons.notifications_outlined,
-                color: appBlack,
+                color: AppColors.appBlack,
               ),
             ),
             IconButton(
               onPressed: () {},
               icon: Icon(
                 Icons.search,
-                color: appBlack,
+                color: AppColors.appBlack,
               ),
             ),
           ],
@@ -161,7 +157,7 @@ class _FirstPageState extends State<FirstPage> {
                       child: ElevatedButton(
                         onPressed: () {},
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: appOrange,
+                          backgroundColor: AppColors.appOrange,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(50),
                           ),
@@ -330,7 +326,7 @@ class _FirstPageState extends State<FirstPage> {
                 Icon(
                   icon,
                   size: 30,
-                  color: appOrange,
+                  color: AppColors.appOrange,
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 10),
@@ -378,7 +374,7 @@ class _FirstPageState extends State<FirstPage> {
                   showModalBottomSheet(
                       backgroundColor: const Color.fromARGB(0, 54, 87, 2),
                       context: context,
-                      builder: (BuildContext) {
+                      builder: (BuildContext buildContext) {
                         return _bottomSheet();
                       });
                 }),
@@ -443,15 +439,13 @@ class _FirstPageState extends State<FirstPage> {
       onTap: () {},
       child: Padding(
         padding: const EdgeInsets.all(5),
-        child: Container(
+        child: SizedBox(
           height: 80,
           width: 70,
           child: Column(
             children: [
-              Container(
-                child: Image.network(
-                  url,
-                ),
+              Image.network(
+                url,
               ),
               const Expanded(child: SizedBox()),
               Text(
@@ -494,7 +488,7 @@ class _FirstPageState extends State<FirstPage> {
                   children: [
                     Icon(
                       Icons.favorite_border,
-                      color: appOrange,
+                      color: AppColors.appOrange,
                     ),
                     const Text('   Ընտրված վճարումներ'),
                     const Expanded(child: SizedBox()),
@@ -512,7 +506,7 @@ class _FirstPageState extends State<FirstPage> {
             child: InkWell(
               onTap: () {},
               child: Container(
-                  padding: EdgeInsets.all(8),
+                  padding: const EdgeInsets.all(8),
                   height: 55,
                   width: double.infinity,
                   decoration: BoxDecoration(
@@ -523,7 +517,7 @@ class _FirstPageState extends State<FirstPage> {
                     children: [
                       Icon(
                         Icons.favorite_border,
-                        color: appOrange,
+                        color: AppColors.appOrange,
                       ),
                       const Text('   Խբային վճարումներ'),
                       const Expanded(child: SizedBox()),

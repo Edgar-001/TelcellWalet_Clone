@@ -60,7 +60,7 @@ class _ServicesPageState extends State<ServicesPage> {
 
   Widget gridViweItem(IconData icon, String text) {
     return Container(
-      padding: EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
           color: Colors.grey.shade200, borderRadius: BorderRadius.circular(15)),
       child: Column(
@@ -69,9 +69,9 @@ class _ServicesPageState extends State<ServicesPage> {
         children: [
           Icon(
             icon,
-            color: Color(0xffFF6F52),
+            color: const Color(0xffFF6F52),
           ),
-          SizedBox(
+          const SizedBox(
             height: 15,
           ),
           Text(text),
@@ -111,7 +111,7 @@ class _ServicesPageState extends State<ServicesPage> {
             children: [
               Icon(
                 icon,
-                color: Color(0xffFF6F52),
+                color: const Color(0xffFF6F52),
               ),
               Text(text),
               const Expanded(child: SizedBox()),
